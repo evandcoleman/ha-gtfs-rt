@@ -136,9 +136,9 @@ class PublicTransportSensor(SensorEntity):
             attrs[ATTR_NEXT_OCCUPANCY] = next_buses[1].occupancy
         if len(next_buses) > 2:
             for i, bus in enumerate(next_buses[2:], start=2):
-                attrs[f"{ATTR_NEXT_UP} (+{i})"] = bus.arrival_time.strftime(TIME_STR_FORMAT)
-                attrs[f"{ATTR_NEXT_UP_DUE_IN} (+{i})"] = due_in_minutes(bus.arrival_time)
-                attrs[f"{ATTR_NEXT_OCCUPANCY} (+{i})"] = bus.occupancy
+                attrs[f"{ATTR_NEXT_UP} (+{i - 1})"] = bus.arrival_time.strftime(TIME_STR_FORMAT)
+                attrs[f"{ATTR_NEXT_UP_DUE_IN} (+{i - 1})"] = due_in_minutes(bus.arrival_time)
+                attrs[f"{ATTR_NEXT_OCCUPANCY} (+{i - 1})"] = bus.occupancy
         return attrs
 
     def update(self):
