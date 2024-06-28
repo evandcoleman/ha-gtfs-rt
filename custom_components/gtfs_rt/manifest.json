@@ -1,6 +1,6 @@
 {
     "domain": "gtfs_rt",
-    "name": "GTFS-Realtime",
+    "name": "GTFS-Realtime (evandcoleman)",
     "documentation": "https://github.com/evandcoleman/ha-gtfs-rt",
     "dependencies": [],
     "codeowners": ["@evandcoleman"],
